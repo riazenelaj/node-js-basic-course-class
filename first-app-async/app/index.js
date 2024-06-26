@@ -1,8 +1,12 @@
 const mathUtils = require("./math-utils");
 
-const response1 = request1(20);
-console.log("**response1**", response1);
+console.log("Program will be blocked :(");
 
+const response1 = request1(200000);
+console.log("**prime numbers**", response1);
+
+
+console.log("Now, I'm able to do other works");
 otherRequests();
 
 function otherRequests() {
@@ -12,13 +16,13 @@ function otherRequests() {
 }
 
 function request1(n) {
-    console.log("**start request 1**");
+    console.log("**calc prime numbers...**");
     const start = new Date();
 
     const primes = mathUtils.getPrimeNumbersWithinRange(2, n);
 
     const end = new Date();
-    console.log("**finish request 1**. Elapsed ms: ", end.getTime() - start.getTime());
+    console.log("**end calc prime numbers**. Elapsed ms: ", end.getTime() - start.getTime());
 
     return primes;
 }
