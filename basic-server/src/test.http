@@ -1,3 +1,4 @@
+
 GET http://127.0.1:3000/
 
 
@@ -17,6 +18,7 @@ GET http://127.0.1:5000/books?sort=ASC
 
 ### get all books
 GET http://127.0.1:5000/books
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzE5NDk5MzkxLCJleHAiOjE3MTk1MDI5OTF9.VsCHYCG7rBYGt4-SBoYmkW7g4lMTfSzIEhU6FBUBmp8 
 
 
 ### create book
@@ -29,5 +31,28 @@ DELETE http://127.0.1:5000/books/14
 
 ### get book by id 
 GET http://127.0.1:5000/books/14
+
+
+
+### POST /signup
+POST http://localhost:5000/signup
+Content-Type: application/json
+
+{
+  "username": "try",
+  "password": "try",
+  "role": "user"
+}
+
+
+### POST /login
+
+POST http://localhost:5000/login
+Content-Type: application/json
+
+{
+  "username": "try",
+  "password": "try"
+}
 
 

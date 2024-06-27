@@ -4,7 +4,9 @@ const {bookSchema } = require("../../schema/books/books")
 
 const booksRoutes = (fastify, options, done) => {
 
-    fastify.get("/books", async (request, reply) => {
+    fastify.get("/books", { preValidation: [fastify.authenticate] }, async (request, reply) => {
+       console.log("user",request.user);
+      
         // console.log("request", request.query)
         const { filterBy, filterValue, sort, pageNumber = 1} = request.query;
 
@@ -44,7 +46,12 @@ params.push(limit, offset);
         }
     });
 
-    fastify.post("/books", { schema: bookSchema }, async (request, reply) => {
+    fastify.post("/books", { schema: bookSchema , preValidation: [fastify.authenticate]}, async (request, reply) => {
+
+        if (request.user.role !== 'admin') {
+            reply.code(500).send({ error: 'Not authenticated as admin to do this request'});
+           }
+
         const { title, author, isbn, publicationyear } = request.body;
         const client = await fastify.pg.connect();
 

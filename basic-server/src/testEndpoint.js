@@ -9,7 +9,8 @@ const postBook = async () => {
         publicationyear: '2222'
     }, {
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzE5NDk5OTE5LCJleHAiOjE3MTk1MDM1MTl9.WNS66pUyIaL2ghSgndnwHPbGg02eo5hkGwMw-AoQzMA'
             }
         });
         console.log(response.data);
