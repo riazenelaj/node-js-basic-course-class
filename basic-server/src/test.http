@@ -1,0 +1,33 @@
+GET http://127.0.1:3000/
+
+
+GET http://127.0.1:3000/items
+
+
+#get item by id 
+GET http://127.0.1:3000/items/2
+
+
+###filter and sort books
+GET http://127.0.1:5000/books?filterBy=author&filterValue=Updated%20John%20Doe
+
+
+###sort books
+GET http://127.0.1:5000/books?sort=ASC
+
+### get all books
+GET http://127.0.1:5000/books
+
+
+### create book
+POST http://127.0.1:5000/books
+
+
+
+### delete a book
+DELETE http://127.0.1:5000/books/14
+
+### get book by id 
+GET http://127.0.1:5000/books/14
+
+
